@@ -5,9 +5,11 @@ import lmstudio as lms
 # Import the specific tools we need
 from tools import fetch_rss_headlines, save_to_markdown, push_to_github
 
+
 # Connect to the local model
 # Ensure this exact model ID matches what is LOADED in LM Studio
 model = lms.llm("deepseek/deepseek-r1-0528-qwen3-8b")
+
 
 
 def job():
