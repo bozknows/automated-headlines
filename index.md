@@ -6,15 +6,19 @@ title: Home
 # 🤖 Matt's AI News Feed
 *Updates generated automatically by local LLM.*
 
----
+<hr>
 
-## Latest Updates
-
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <span style="color:gray">{{ post.date | date: "%b %d" }}</span> -
+{% for post in site.posts %}
+  <article style="margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+    <h2>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+    </h2>
+    <p style="color: gray; font-size: 0.9em;">
+      {{ post.date | date: "%B %d, %Y at %I:%M %p" }}
+    </p>
+    
+    <div class="post-content">
+      {{ post.content }}
+    </div>
+  </article>
+{% endfor %}
