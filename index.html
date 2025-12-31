@@ -1,0 +1,22 @@
+---
+layout: default
+title: Debug Page
+---
+<h3>Diagnostic Status</h3>
+<p>If you see 0 below, GitHub is hiding your posts.</p>
+
+<ul>
+    <li><strong>Total Posts Found:</strong> {{ site.posts.size }}</li>
+    <li><strong>Current Server Time:</strong> {{ site.time }}</li>
+</ul>
+
+<hr>
+
+<h3>Raw Post List:</h3>
+<ul>
+{% for post in site.posts %}
+    <li>FOUND: <a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date }})</li>
+{% else %}
+    <li>❌ No posts found. (Jekyll is hiding them)</li>
+{% endfor %}
+</ul>
