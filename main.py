@@ -34,14 +34,9 @@ def job():
     print("2. Generating Summary...")
 
     prompt = (
-        f"You are a tech news editor. Here is the raw data:\n{raw_news}\n\n"
-        "TASK: Write a short, punchy 'Smart Brevity' newsletter update.\n"
-        "RULES:\n"
-        "- Use standard Markdown (## for headers, * for bullets).\n"
-        "- Start with a single catchy main headline (use #).\n"
-        "- Group stories by theme.\n"
-        "- Include the links.\n"
-        "- NO introduction text (like 'Here is the summary'). Just start writing."
+        f"DATA:\n{raw_news}\n\n"
+        "TASK: Summarize the above data into 3 bullet points."
+        "If no data is present, write 'No news available at this time.'"
     )
 
     try:
