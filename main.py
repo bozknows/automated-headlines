@@ -2,7 +2,7 @@ import time
 import schedule
 import re
 import lmstudio as lms
-from datetime import datetime
+from datetime import datetime, timedelta  # <--- Added timedelta
 
 # Import tools
 # (Make sure tools.py is in the same folder)
@@ -59,7 +59,11 @@ def job():
 
         # --- STEP 3: INJECT JEKYLL FRONT MATTER ---
         # This is critical for Jekyll to render the post
-        current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S -0800")
+
+        # FIX: Subtract 1 hour to ensure the post is never "in the future" for the server
+        current_time_str = (datetime.now() - timedelta(hours=1)).strftime("%Y-%m-%d %H:%M:%S -0800")
+
+        # We keep the title time as "now" so it looks correct to humans
         display_title_time = datetime.now().strftime("%H:%M")
 
         front_matter = f"""---
