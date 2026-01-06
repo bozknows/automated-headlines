@@ -2,3 +2,8 @@ title: "AI News Feed"
 theme: jekyll-theme-minimal
 future: true
 timezone: America/Los_Angeles
+
+# --- GITHUB PAGES CONFIGURATION ---
+# Replace this with your repository name
+baseurl: "/automated-headlines"
+url: "https://bozknows.github.io"
