@@ -42,6 +42,7 @@ def job():
         "- Use standard Markdown.\n"
         "- Start with a catchy sub-headline (use ##), NOT a main header (#).\n"
         "- Group stories by theme.\n"
+        "- Include a brief two sentence summary of the article.\n"
         "- Include the links.\n"
         "- NO introduction text. Just start writing."
     )
